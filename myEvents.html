@@ -1,0 +1,86 @@
+<script type="text/x-red" data-template-name="Add task">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Add task">
+    <p>Add msg to event queue.</p>
+<h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>delay
+            <span class="property-type">integer</span>
+        </dt>
+        <dd> number of ms to wait until the dispatcher releases the message again. </dd>
+    </dl>
+
+ <h3>Details</h3>
+    <p><code>msg.delay</code> is used as timeout value to set when the dispatcher shoult 
+	release the event again. The whole message will be stored as-is and returned by 
+	the dispatcher node.</p>
+    
+
+</script>	
+
+<script type="text/javascript">
+    RED.nodes.registerType('Add task',{
+        category: 'output',
+        defaults: {
+            name: {name:""}
+        },
+        color:"#d6d0E8",
+        inputs:1,
+        outputs:0,
+        align:"right",
+        icon: "connections.png",
+        label: function() {
+            return this.name||'Add task';
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>  
+
+
+<script type="text/x-red" data-template-name="Do task">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+  </script>
+
+<script type="text/x-red" data-help-name="Do task">
+    <p>Dispatch events added by the 'add event node' after given delay</p>
+
+ <h3>Outputs</h3>
+    <p> the whole message that was injected into the <code>Add Event</code> node.</P>
+
+<h3>Details</h3>
+    <p>The Dispatch node returns the <code>msg</code> that was injected into the <code>Add Event</code> node.
+	No changes will be made to the msg.</p>
+	
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('Do task',{
+        category: 'input',
+        defaults: {
+            name: {value:""}
+        },
+        color:"#D6D0E8",  
+        inputs:0,
+        outputs:1,
+        icon: "connections.png",
+        label: function() {
+            return this.name||"Do task";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        },
+		oneditprepare: function() {
+		}
+    });
+</script>
+

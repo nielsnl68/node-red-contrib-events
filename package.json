@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "Niels v.d. Spek",
+    "email": "nielsnl68@gmail.com",
+    "url": "https://github.com/nielsnl68/node-red-contrib-events"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+  },
+  "deprecated": false,
+  "description": "This set of nodes allows you to setup your own event system",
+  "homepage": "https://github.com/nielsnl68/node-red-contrib-events#readme",
+  "keywords": [
+    "_n_de-red",
+    "_n_de-red-contrib",
+    "events"
+  ],
+  "license": "Apache-2.0",
+  "main": "myEvents.js",
+  "name": "node-red-contrib-events",
+  "node-red": {
+    "nodes": {
+      "files": "myEvents.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nielsnl68/node-red-contrib-events.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.2.0"
+}
